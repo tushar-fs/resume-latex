@@ -2,8 +2,6 @@
 
 <!-- The compiled PDF will be displayed here -->
 
-![Resume Preview](resume.pdf)
-
 > **📥 [Download PDF](Resume.pdf)** | **🔗 [View Source](resume.tex)**
 
 ## 📧 Contact
