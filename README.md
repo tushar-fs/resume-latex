@@ -4,7 +4,7 @@
 
 ![Resume Preview](resume.pdf)
 
-> **📥 [Download PDF](resume.pdf)** | **🔗 [View Source](resume.tex)**
+> **📥 [Download PDF](Resume.pdf)** | **🔗 [View Source](resume.tex)**
 
 ## 📧 Contact
 
