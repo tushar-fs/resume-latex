@@ -1,0 +1,312 @@
+% Document setup - 10pt font size, letter paper format
+\documentclass[10pt, letterpaper]{article}
+
+% Page margins and layout settings
+\usepackage[
+    ignoreheadfoot,     % Don't consider header/footer in margin calculations
+    top=1.0 cm,         % Top margin - adjust to increase/decrease top spacing
+    bottom=1.0 cm,      % Bottom margin - adjust to increase/decrease bottom spacing
+    left=1.0 cm,        % Left margin - adjust to increase/decrease left spacing
+    right=1.0 cm,       % Right margin - adjust to increase/decrease right spacing
+    footskip=1.0 cm     % Footer spacing
+]{geometry}
+% Required packages for formatting and features
+\usepackage{titlesec}       % For customizing section titles
+\usepackage{tabularx}       % For tables with fixed width columns
+\usepackage{array}          % Required by tabularx
+\usepackage[dvipsnames]{xcolor}  % For colors
+\definecolor{primaryColor}{RGB}{0, 0, 0}  % Define primary color (change RGB values to customize)
+\usepackage{enumitem}       % For customizing lists and bullet points
+\usepackage{fontawesome5}   % For icons (email, phone, LinkedIn, GitHub)
+\usepackage{amsmath}        % For mathematical symbols
+% PDF settings and metadata
+\usepackage[
+    pdftitle={Tushar Singh's CV},    % Change to your name
+    pdfauthor={Tushar Singh},        % Change to your name
+    colorlinks=true,                 % Enable colored links
+    urlcolor=primaryColor            % Color for links
+]{hyperref}
+
+% Additional required packages
+\usepackage{calc}           % For calculating lengths
+\usepackage{changepage}     % For adjustwidth environment
+\usepackage{paracol}        % For multi-column layouts
+\usepackage{needspace}      % For preventing page breaks after section titles
+\usepackage{iftex}          % For checking LaTeX engine
+
+% Custom colors - modify RGB values to change colors
+\usepackage{xcolor}
+\definecolor{darkgray}{rgb}{0.2, 0.2, 0.2}  % Dark gray for dates and locations
+
+% Font encoding for PDF compatibility (ATS-friendly)
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% Font selection - change this line to use different fonts:
+% \usepackage{charter}        % Charter font (current)
+% \usepackage{mathptmx}       % Times New Roman
+% \usepackage{palatino}       % Palatino
+% \usepackage{helvet}         % Helvetica (sans-serif)
+\usepackage{charter}          % Current font choice
+% Document formatting settings
+\raggedright                    % Left-align text (no justification)
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}  % Remove extra space in adjustwidth
+\pagestyle{empty}               % No page headers or footers
+\setcounter{secnumdepth}{0}     % No section numbering
+\setlength{\parindent}{0pt}     % No paragraph indentation
+\setlength{\topskip}{0pt}       % No top skip
+\setlength{\columnsep}{0.15cm}  % Column separation for multi-column layouts
+\pagenumbering{gobble}          % No page numbers
+
+% Section title formatting - creates bold section headers with underlines
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+% Section spacing: {left margin}{top space}{bottom space}
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+% Custom bullet point style for lists
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+% Environment for bullet point lists in experience/education sections
+% Adjust spacing values to change list appearance
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,     % Space above the list
+        parsep=0.10 cm,     % Space between paragraphs in items
+        partopsep=0pt,      % Extra space above first item
+        itemsep=0pt,        % Space between items
+        leftmargin=0 cm + 10pt  % Left margin for bullet points
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    % Command for separator in header (creates | symbols between contact info)
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}  % Change this symbol to customize separator
+
+    % Header section with name and contact information
+    % TO CUSTOMIZE: Replace with your own information
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Tushar Singh  % CHANGE: Your full name here
+
+        \vspace{5 pt}
+
+        \normalsize
+        % CHANGE: Replace with your email
+        \mbox{\faEnvelope\ \hrefWithoutArrow{mailto:connect.tushar0@gmail.com}{connect.tushar0@gmail.com}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        % CHANGE: Replace with your phone number
+        \mbox{\faPhone\ \hrefWithoutArrow{tel:+1-669-212-1359}{+1 (669)-212-1359}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        % CHANGE: Replace with your LinkedIn profile
+        \mbox{\faLinkedin\ \hrefWithoutArrow{https://linkedin.com/in/tushar-singh-sde}{tushar-singh-sde}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        % CHANGE: Replace with your GitHub profile
+        \mbox{\faGithub\ \hrefWithoutArrow{https://github.com/tushar-fs}{tushar-fs}}%
+    \end{header}
+
+    \vspace{5 pt - 0.1 cm}  % Adjust spacing between header and first section
+
+    % ===== EDUCATION SECTION =====
+    % TO CUSTOMIZE: Replace with your educational background
+    \section{Education}
+
+
+
+        
+        % Format: University Name [right-aligned: dates | location]
+        % CHANGE: Replace with your university information
+        \noindent
+        \textbf{San Jose State University} \hfill {\color{darkgray}\small{\textbf{Jan 2025 – Present} $|$ San Jose, CA}}\\
+        {\color{darkgray}\textit{Masters in Computer Software Engineering}} $|$ \textit{GPA: 3.7/4.0}
+        \begin{highlights}
+            \item \textbf{Coursework:} Enterprise Distributed Systems, Software Systems Engineering, Enterprise Software Applications \end{highlights}
+        
+        \vspace{0.1cm}
+        
+        \noindent
+        \textbf{National Institute of Technology} \hfill {\color{darkgray}\small{\textbf{Aug 2018 – Jun 2022} $|$ Meghalaya, India}} \\
+        {\color{darkgray}\textit{Bachelors in Computer Science \& Engineering}} $|$ \textit{GPA: 3.4/4.0}
+        \begin{highlights}
+            \item \textbf{Relevant Coursework:} Design \& Analysis of Algorithms, Database Management Systems, Computer Networks, Operating Systems, Object Oriented Programming
+        \end{highlights}
+
+
+
+    
+    % ===== EXPERIENCE SECTION =====
+    % TO CUSTOMIZE: Replace with your work experience
+    \section{Experience}
+
+        % Format: Job Title, Company [right-aligned: dates | location]
+        % CHANGE: Replace with your job experience
+        \noindent
+        \textbf{Software Engineer}, {\color{darkgray}\textit{Tekion Corp}} \hfill {\color{darkgray}\small{\textbf{July 2022 – Dec 2024} $|$ Bengaluru, India }}
+
+        \vspace{0.20 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a dynamic, app-like user experience, which led to a 20\% increase in user engagement.
+                \item Integrated a \textbf{configurable front-end UI} into the Account Receivables module using \textbf{TypeScript} \& React.
+                \item Independently developed a feature leveraging \textbf{local and session storage API's} to persist user vehicle builds and customizations, ensuring seamless state preservation and retrieval across browser sessions.
+                \item Engineered a fully responsive compare vehicles page by adopting a hybrid rendering strategy. Utilized \textbf{Static Site Generation(SSG)} for initial page loads, while applying \textbf{Client Side Rendering(CSR)} for the interactive search and filtering.
+                \item Refactored for \textbf{code-splitting and lazy loading} (–30\% bundle size), introduced SEO-friendly URLs.
+            \end{highlights}
+        \end{onecolentry}
+
+
+        \vspace{0.3 cm}
+
+        \noindent
+        \textbf{Engineering Intern}, {\color{darkgray}\textit{Tekion Corp}} \hfill {\color{darkgray}\small{ \textbf{Jan 2022 – Jun 2022} $|$ Bengaluru, India }}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Worked with the frontend team on a project aimed at streamlining dealer onboarding processes, resulting in a significant reduction in the company's costs associated with dealer onboarding.
+                \item Authored comprehensive Unit tests with \textbf{Jest and React Testing Library (RTL)} to ensure code quality.
+            \end{highlights}
+        \end{onecolentry}
+
+
+    
+    % ===== PROJECTS SECTION =====
+    % TO CUSTOMIZE: Replace with your projects
+    \section{Academic Projects}
+
+        % Format: Project Name [right-aligned: GitHub link]
+        % CHANGE: Replace with your projects
+        \noindent
+        \textbf{Customer Support Analyzer [\textit{RAG based Application}]} \hfill \href{https://github.com/tushar-fs/customer-support-analyzer}{\small \faGithub \space GitHub}
+        
+        \begin{highlights}
+            \item Architected a full-stack semantic search engine, featuring a \textbf{Python/FastAPI} backend to power a \textbf{Retrieval-Augmented Generation (RAG)} pipeline to enable natural language queries on a knowledge base of customer support tickets.
+            \item Integrated Google's \textbf{gemini-1.5-flash-latest LLM} with a \textbf{ChromaDB} vector database and \textbf{`sentence-transformers`} to deliver context-aware resolution from a knowledge base.
+            \item Engineered a responsive frontend using \textbf{Next.js} and \textbf{React}, allowing users to submit queries and view AI-generated answers alongside the original source support tickets for verification.
+            \item \textbf{Technologies Used:} Python, FastAPI, Next.js, React, Vector Database(ChromaDB), Google Gemini API, Sentence-Transformers, Hugging face, Tailwind CSS.
+        \end{highlights}
+
+
+        \vspace{0.2 cm}
+
+        \noindent
+        \textbf{BookTable [\textit{Restaurant Booking Application}]} \hfill \href{https://github.com/gopinathsjsu/team-project-20201-synergy}{\small \faGithub \space GitHub}
+        
+        \begin{highlights}
+            \item \textbf{Led key frontend development:} Established the UI project, \textbf{Dockerized} the frontend, built core user interfaces (Login, Homepage, Profile), and engineered dynamic restaurant search and discovery by integrating \textbf{Google Maps API}.
+            \item Developed backend REST APIs in \textbf{Spring Boot} for user registration, booking, and restaurant search functionalities. For data persistence, I used \textbf{Spring JPA and JDBC} to connect and perform CRUD operations on a \textbf{MySQL} database.
+            \item \textbf{Technologies Used:} Spring boot, JDBC, MySql, Gradle, NextJS, React, NPM, Google Places API
+        \end{highlights}
+
+
+
+    
+    % ===== TECHNOLOGIES/SKILLS SECTION =====
+    % TO CUSTOMIZE: Replace with your technical skills
+    % Organize skills by category for better readability
+    \section{Technologies}
+
+        % Programming Languages category
+        \begin{onecolentry}
+        \textbf{Programming Languages:} JavaScript, Java, C++, Python, SQL  % CHANGE: Add your languages
+        \end{onecolentry}
+        
+        \vspace{0.1 cm}
+        
+        % Frontend Technologies category
+        \begin{onecolentry}
+        \textbf{Frontend:} React, Next.js, Redux, Tailwind CSS, Sass, Material UI \\  % CHANGE: Add your frontend skills
+        \vspace{0.1 cm}
+        \textbf{Backend:} Spring, Spring Boot, FastAPI, Spring JPA, JDBC  % CHANGE: Add your backend skills
+        \end{onecolentry}
+        
+        \vspace{0.1 cm}
+        
+        % Database Technologies category
+        \begin{onecolentry}
+        \textbf{Databases:} MySQL, MongoDB, Redis \  % CHANGE: Add your database experience
+        \end{onecolentry}
+        
+        \vspace{0.1 cm}
+        
+        % Development Tools category
+        \begin{onecolentry}
+        \textbf{Software Tools:} Git, Docker, Figma, IntelliJ, Postman, Jenkins \\  % CHANGE: Add your tools
+        \vspace{0.1 cm}
+        \end{onecolentry}
+
+
+    
+
+\end{document}
