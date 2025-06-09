@@ -15,7 +15,7 @@
 \usepackage{tabularx}       % For tables with fixed width columns
 \usepackage{array}          % Required by tabularx
 \usepackage[dvipsnames]{xcolor}  % For colors
-\definecolor{primaryColor}{RGB}{0, 0, 0}  % Define primary color (change RGB values to customize)
+\definecolor{primaryColor}{RGB}{25, 60, 145}  % Dark Blue
 \usepackage{enumitem}       % For customizing lists and bullet points
 \usepackage{fontawesome5}   % For icons (email, phone, LinkedIn, GitHub)
 \usepackage{amsmath}        % For mathematical symbols
@@ -131,7 +131,7 @@
 }
 
 \newenvironment{header}{
-    \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.5}
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
 }{
     \par\kern\topsep
 }
@@ -174,6 +174,11 @@
         \kern 5.0 pt%
         % CHANGE: Replace with your GitHub profile
         \mbox{\faGithub\ \hrefWithoutArrow{https://github.com/tushar-fs}{tushar-fs}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        % Location
+        \mbox{\faMapMarker\ San Francisco Bay Area, CA}%
     \end{header}
 
     \vspace{5 pt - 0.1 cm}  % Adjust spacing between header and first section
@@ -197,7 +202,7 @@
         
         \noindent
         \textbf{National Institute of Technology} \hfill {\color{darkgray}\small{\textbf{Aug 2018 – Jun 2022} $|$ Meghalaya, India}} \\
-        {\color{darkgray}\textit{Bachelors in Computer Science \& Engineering}} $|$ \textit{GPA: 3.4/4.0}
+        {\color{darkgray}\textit{Bachelors in Computer Science \& Engineering}} $|$ \textit{GPA: 3.5/4.0}
         \begin{highlights}
             \item \textbf{Relevant Coursework:} Design \& Analysis of Algorithms, Database Management Systems, Computer Networks, Operating Systems, Object Oriented Programming
         \end{highlights}
@@ -217,10 +222,10 @@
         \vspace{0.20 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a dynamic, app-like user experience, which led to a 20\% increase in user engagement.
+                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a dynamic, app-like user experience that led to a 20\% increase in user engagement.
                 \item Integrated a \textbf{configurable front-end UI} into the Account Receivables module using \textbf{TypeScript} \& React.
-                \item Independently developed a feature leveraging \textbf{local and session storage API's} to persist user vehicle builds and customizations, ensuring seamless state preservation and retrieval across browser sessions.
-                \item Engineered a fully responsive compare vehicles page by adopting a hybrid rendering strategy. Utilized \textbf{Static Site Generation(SSG)} for initial page loads, while applying \textbf{Client Side Rendering(CSR)} for the interactive search and filtering.
+                \item  Developed a feature leveraging \textbf{local and session storage API's} to persist user vehicle builds and customizations, ensuring seamless state preservation and retrieval across browser sessions.
+                \item Engineered a responsive compare vehicles page by adopting a hybrid rendering strategy. Utilized \textbf{Static Site Generation(SSG)} for initial page loads, while applying \textbf{Client Side Rendering(CSR)} for interactive search and filtering.
                 \item Refactored for \textbf{code-splitting and lazy loading} (–30\% bundle size), introduced SEO-friendly URLs.
             \end{highlights}
         \end{onecolentry}
@@ -234,41 +239,10 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Worked with the frontend team on a project aimed at streamlining dealer onboarding processes, resulting in a significant reduction in the company's costs associated with dealer onboarding.
+                \item Collaborated with frontend team on a project aimed at streamlining dealer onboarding processes, resulting in a significant reduction in company's costs associated with dealer onboarding.
                 \item Authored comprehensive Unit tests with \textbf{Jest and React Testing Library (RTL)} to ensure code quality.
             \end{highlights}
         \end{onecolentry}
-
-
-    
-    % ===== PROJECTS SECTION =====
-    % TO CUSTOMIZE: Replace with your projects
-    \section{Academic Projects}
-
-        % Format: Project Name [right-aligned: GitHub link]
-        % CHANGE: Replace with your projects
-        \noindent
-        \textbf{Customer Support Analyzer [\textit{RAG based Application}]} \hfill \href{https://github.com/tushar-fs/customer-support-analyzer}{\small \faGithub \space GitHub}
-        
-        \begin{highlights}
-            \item Architected a full-stack semantic search engine, featuring a \textbf{Python/FastAPI} backend to power a \textbf{Retrieval-Augmented Generation (RAG)} pipeline to enable natural language queries on a knowledge base of customer support tickets.
-            \item Integrated Google's \textbf{gemini-1.5-flash-latest LLM} with a \textbf{ChromaDB} vector database and \textbf{`sentence-transformers`} to deliver context-aware resolution from a knowledge base.
-            \item Engineered a responsive frontend using \textbf{Next.js} and \textbf{React}, allowing users to submit queries and view AI-generated answers alongside the original source support tickets for verification.
-            \item \textbf{Technologies Used:} Python, FastAPI, Next.js, React, Vector Database(ChromaDB), Google Gemini API, Sentence-Transformers, Hugging face, Tailwind CSS.
-        \end{highlights}
-
-
-        \vspace{0.2 cm}
-
-        \noindent
-        \textbf{BookTable [\textit{Restaurant Booking Application}]} \hfill \href{https://github.com/gopinathsjsu/team-project-20201-synergy}{\small \faGithub \space GitHub}
-        
-        \begin{highlights}
-            \item \textbf{Led key frontend development:} Established the UI project, \textbf{Dockerized} the frontend, built core user interfaces (Login, Homepage, Profile), and engineered dynamic restaurant search and discovery by integrating \textbf{Google Maps API}.
-            \item Developed backend REST APIs in \textbf{Spring Boot} for user registration, booking, and restaurant search functionalities. For data persistence, I used \textbf{Spring JPA and JDBC} to connect and perform CRUD operations on a \textbf{MySQL} database.
-            \item \textbf{Technologies Used:} Spring boot, JDBC, MySql, Gradle, NextJS, React, NPM, Google Places API.
-        \end{highlights}
-
 
 
     
@@ -307,6 +281,34 @@
         \end{onecolentry}
 
 
-    
+    % ===== PROJECTS SECTION =====
+    % TO CUSTOMIZE: Replace with your projects
+    \section{Academic Projects}
+
+        % Format: Project Name [right-aligned: GitHub link]
+        % CHANGE: Replace with your projects
+        \noindent
+        \textbf{Customer Support Analyzer [\textit{RAG based Application}]} \hfill \href{https://github.com/tushar-fs/customer-support-analyzer}{\small \faGithub \space GitHub}
+        
+        \begin{highlights}
+            \item Architected a full-stack semantic search engine, featuring a \textbf{Python/FastAPI} backend to power a \textbf{Retrieval-Augmented Generation (RAG)} pipeline to enable natural language queries on a knowledge base of customer support tickets.
+            \item Combined Google's \textbf{gemini-1.5-flash-latest LLM} with a \textbf{ChromaDB} vector database and \textbf{`sentence-transformers`} to deliver context-aware resolution from a knowledge base.
+            \item Engineered a responsive frontend using \textbf{Next.js} and \textbf{React}, allowing users to submit queries and view AI-generated answers alongside original source support tickets for verification.
+            \item \textbf{Technologies Used:} Python, FastAPI, Next.js, React, Vector Database(ChromaDB), Google Gemini API, Sentence-Transformers, Hugging face, Tailwind CSS.
+        \end{highlights}
+
+
+        \vspace{0.2 cm}
+
+        \noindent
+        \textbf{BookTable [\textit{Restaurant Booking Application}]} \hfill \href{https://github.com/gopinathsjsu/team-project-20201-synergy}{\small \faGithub \space GitHub}
+        
+        \begin{highlights}
+            \item \textbf{Led key frontend development:} Established the UI project, \textbf{dockerized} frontend, built core user interfaces (Login, Homepage, Profile), and engineered dynamic restaurant search and discovery by integrating \textbf{Google Maps API}.
+            \item Developed backend REST APIs in \textbf{Spring Boot} for user registration, booking, and restaurant search functionalities. Leveraged \textbf{Spring JPA and JDBC} to connect and perform CRUD operations on a \textbf{MySQL} database for data persistence.
+            \item \textbf{Technologies Used:} Spring boot, JDBC, MySQL, Gradle, NextJS, React, Docker, NPM, Google Places API.
+        \end{highlights}
+
+
 
 \end{document}
