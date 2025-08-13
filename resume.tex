@@ -17,6 +17,7 @@
 \usepackage[dvipsnames]{xcolor}  % For colors
 \definecolor{primaryColor}{RGB}{25, 60, 145}  % Dark Blue
 \usepackage{enumitem}       % For customizing lists and bullet points
+\setlist{topsep=0.25em, itemsep=0.25em, parsep=0.25em}  % Reduce list spacing
 \usepackage{fontawesome5}   % For icons (email, phone, LinkedIn, GitHub)
 \usepackage{amsmath}        % For mathematical symbols
 % PDF settings and metadata
@@ -67,7 +68,7 @@
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
 % Section spacing: {left margin}{top space}{bottom space}
-\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+\titlespacing{\section}{0pt}{1.5ex plus .1ex minus .2ex}{1.0ex plus .1ex}  % Reduce section spacing
 
 % Custom bullet point style for lists
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
@@ -199,13 +200,6 @@
             \item \textbf{Coursework:} Enterprise Distributed Systems, Software Systems Engineering, Enterprise Software Applications \end{highlights}
         
         \vspace{0.1cm}
-        
-        \noindent
-        \textbf{National Institute of Technology} \hfill {\color{darkgray}\small{\textbf{Aug 2018 – Jun 2022} $|$ Meghalaya, India}} \\
-        {\color{darkgray}\textit{Bachelors in Computer Science \& Engineering}} $|$ \textit{GPA: 3.5/4.0}
-        \begin{highlights}
-            \item \textbf{Relevant Coursework:} Design \& Analysis of Algorithms, Database Management Systems, Computer Networks, Operating Systems, Object Oriented Programming
-        \end{highlights}
 
 
 
@@ -222,11 +216,11 @@
         \vspace{0.20 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a dynamic, app-like user experience that led to a 20\% increase in user engagement.
-                \item Integrated a \textbf{configurable front-end UI} into the Account Receivables module using \textbf{TypeScript} \& React.
-                \item  Developed a feature leveraging \textbf{local and session storage API's} to persist user vehicle builds and customizations, ensuring seamless state preservation and retrieval across browser sessions.
-                \item Engineered a responsive compare vehicles page by adopting a hybrid rendering strategy. Utilized \textbf{Static Site Generation(SSG)} for initial page loads, while applying \textbf{Client Side Rendering(CSR)} for interactive search and filtering.
-                \item Refactored for \textbf{code-splitting and lazy loading} (–30\% bundle size), introduced SEO-friendly URLs.
+                \item Boosted page performance by architecting a hybrid rendering strategy for the vehicle comparison page, improving the Google Lighthouse score by \textbf{over 30 points}. This was achieved by optimizing for Core Web Vitals, cutting \textbf{Largest Contentful Paint (LCP) by 60\%} using Static Site Generation (SSG) for initial loads.
+                \item Drove a \textbf{30\% increase in user adoption} for Tekion Pay by architecting a real-time transaction status feature that boosted user trust. Optimized the system by migrating from a \textbf{3-second short polling interval to Server-Sent Events (SSE)}, cutting perceived update latency by \textbf{over 80\% (>=3s to <500ms)}.
+                \item Refactored for \textbf{code-splitting and lazy loading} (\textbf{–30\% bundle size}), introduced SEO-friendly URLs.
+                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a dynamic, app-like user experience that led to a \textbf{20\% increase in user engagement}.
+                \item Developed a feature leveraging \textbf{local and session storage API's} to persist user vehicle builds and customizations, ensuring seamless state preservation and retrieval across browser sessions.
             \end{highlights}
         \end{onecolentry}
 
@@ -240,6 +234,7 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item Collaborated with frontend team on a project aimed at streamlining dealer onboarding processes, resulting in a significant reduction in company's costs associated with dealer onboarding.
+                \item Integrated a \textbf{configurable front-end UI} into the Account Receivables module using \textbf{TypeScript} \& React.
                 \item Authored comprehensive Unit tests with \textbf{Jest and React Testing Library (RTL)} to ensure code quality.
             \end{highlights}
         \end{onecolentry}
