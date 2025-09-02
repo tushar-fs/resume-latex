@@ -4,7 +4,7 @@
 % Page margins and layout settings
 \usepackage[
     ignoreheadfoot,     % Don't consider header/footer in margin calculations
-    top=1.3 cm,         % Top margin - adjust to increase/decrease top spacing
+    top=0.7 cm,         % Top margin - adjust to increase/decrease top spacing
     bottom=1.0 cm,      % Bottom margin - adjust to increase/decrease bottom spacing
     left=1.0 cm,        % Left margin - adjust to increase/decrease left spacing
     right=1.0 cm,       % Right margin - adjust to increase/decrease right spacing
@@ -18,7 +18,6 @@
 \definecolor{primaryColor}{RGB}{25, 60, 145}  % Dark Blue
 \usepackage{enumitem}       % For customizing lists and bullet points
 \setlist{topsep=0.25em, itemsep=0.25em, parsep=0.25em}  % Reduce list spacing
-\usepackage{fontawesome5}   % For icons (email, phone, LinkedIn, GitHub)
 \usepackage{amsmath}        % For mathematical symbols
 % PDF settings and metadata
 \usepackage[
@@ -53,7 +52,7 @@
 % \usepackage{mathptmx}       % Times New Roman
 % \usepackage{palatino}       % Palatino
 % \usepackage{helvet}         % Helvetica (sans-serif)
-\usepackage{charter}          % Current font choice
+\usepackage{helvet}       % Current font choice
 % Document formatting settings
 \raggedright                    % Left-align text (no justification)
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt}  % Remove extra space in adjustwidth
@@ -79,7 +78,7 @@
         topsep=0.10 cm,     % Space above the list
         parsep=0.10 cm,     % Space between paragraphs in items
         partopsep=0pt,      % Extra space above first item
-        itemsep=0pt,        % Space between items
+        itemsep=0.03cm,     % Space between items
         leftmargin=0 cm + 10pt  % Left margin for bullet points
     ]
 }{
@@ -91,7 +90,7 @@
         topsep=0.10 cm,
         parsep=0.10 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.0cm,
         leftmargin=10pt
     ]
 }{
@@ -159,30 +158,36 @@
 
         \normalsize
         % CHANGE: Replace with your email
-        \mbox{\faEnvelope\ \hrefWithoutArrow{mailto:connect.tushar0@gmail.com}{connect.tushar0@gmail.com}}%
+        \mbox{\hrefWithoutArrow{mailto:tushar.singh01@sjsu.edu}{tushar.singh01@sjsu.edu}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
         % CHANGE: Replace with your phone number
-        \mbox{\faPhone\ \hrefWithoutArrow{tel:+1-669-212-1359}{+1 (669)-212-1359}}%
+        \mbox{\hrefWithoutArrow{tel:+1-669-212-1359}{+1 (669)-212-1359}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
         % CHANGE: Replace with your LinkedIn profile
-        \mbox{\faLinkedin\ \hrefWithoutArrow{https://linkedin.com/in/tushar-singh-sde}{tushar-singh-sde}}%
+        \mbox{\textbf{LinkedIn}: \hrefWithoutArrow{https://www.linkedin.com/in/tushar-singh-sde/}{linkedin.com/in/tushar-singh-sde}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        % CHANGE: Replace with your GitHub profile
-        \mbox{\faGithub\ \hrefWithoutArrow{https://github.com/tushar-fs}{tushar-fs}}%
+        %CHANGE: Replace with your portfolio
+        \mbox{\textbf{Portfolio}: \hrefWithoutArrow{https://workwithtushar.vercel.app}{workwithtushar.vercel.app}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
         % Location
-        \mbox{\faMapMarker\ San Francisco Bay Area, CA}%
+        \mbox{\textbf{San Jose, CA}}%
     \end{header}
 
     \vspace{5 pt - 0.1 cm}  % Adjust spacing between header and first section
+
+    % ===== SUMMARY SECTION =====
+    \section{Professional Summary}
+    \begin{onecolentry}
+    Software Engineer with \textbf{2.5 years} of experience delivering high-performance features using React, Next.js. Specializing in the application of AI by integrating Large Language Models (LLMs) with Python to build intelligent and responsive web solutions.
+    \end{onecolentry}
 
     % ===== EDUCATION SECTION =====
     % TO CUSTOMIZE: Replace with your educational background
@@ -192,11 +197,9 @@
         % CHANGE: Replace with your university information
         \noindent
         \textbf{San Jose State University} \hfill {\color{darkgray}\small{\textbf{Jan 2025 – Present} $|$ San Jose, CA}}\\
-        {\color{darkgray}\textit{Masters in Computer Software Engineering}} $|$ \textit{GPA: 3.7/4.0}
+        {\color{darkgray}Masters in Computer Software Engineering} $|$ \textbf{GPA: 3.7/4.0}
         \begin{highlights}
             \item \textbf{Coursework:} Enterprise Distributed Systems, Software Systems Engineering, Enterprise Software Applications \end{highlights}
-        
-        \vspace{0.1cm}
 
 
     % ===== EXPERIENCE SECTION =====
@@ -211,11 +214,10 @@
         \vspace{0.20 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Drove a \textbf{30\% increase in user adoption} for Tekion Pay by architecting a real-time transaction status feature that boosted user trust. Optimized the system by migrating from a \textbf{3-second short polling interval to Server-Sent Events (SSE)}, cutting perceived update latency by \textbf{over 80\% (>=3s to <500ms)}.
-                \item Implemented \textbf{Module Federation} across the \textbf{microfrontend monorepo} to enable dynamic code sharing and independent team deployments, reducing initial application bundle sizes by \textbf{30\%}.
-                \item Boosted page performance by architecting a hybrid rendering strategy for the vehicle comparison page, improving the Google Lighthouse score by \textbf{over 30 points}. This was achieved by optimizing for Core Web Vitals, cutting \textbf{Largest Contentful Paint (LCP) by 60\%} using Static Site Generation (SSG) for initial loads.
-                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a dynamic, app-like user experience that led to a \textbf{20\% increase in user engagement}.
-                \item Developed a feature leveraging \textbf{local and session storage API's} to persist user vehicle builds and customizations, ensuring seamless state preservation and retrieval across browser sessions.
+                \item Architected \textbf{real-time transaction status} with \textbf{Server-Sent Events}, cutting latency from over \textbf{3s to less than 500ms} and lifting Tekion Pay adoption by 45\%.
+                \item Implemented \textbf{Module Federation} across the microfrontend monorepo to enable dynamic code sharing and independent team deployments, reducing initial application bundle sizes by 33\%.
+                \item Built a hybrid rendering strategy (SSG + CSR) for the vehicle comparison page, catapulting its \textbf{performance rating from 'Poor' to 'Good' in Google Lighthouse} and reducing LCP by 60\%.
+                \item Designed and implemented 10+ interactive user interfaces using \textbf{NextJS, React \& Material UI} primarily leveraging \textbf{Client-Side Rendering (CSR)} to create a highly interactive, app-like user experience that led to a significant increase in user engagement.
             \end{highlights}
         \end{onecolentry}
 
@@ -228,9 +230,8 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Collaborated with frontend team on a project aimed at streamlining dealer onboarding processes, resulting in a significant reduction in company's costs associated with dealer onboarding.
-                \item Integrated a \textbf{configurable front-end UI} into the Account Receivables module using \textbf{TypeScript} \& React.
-                \item Authored comprehensive Unit tests with \textbf{Jest and React Testing Library (RTL)} to ensure code quality.
+                \item Engineered a JSON-driven configurable forms engine that applied dealer-specific region and business logic to render data-driven, customized inputs and fields, slashing new dealer setup and configuration time by an estimated 55\%.
+                \item Authored comprehensive Unit tests with \textbf{Jest and React Testing Library (RTL)}, achieving over 85\% code coverage for the Account Receivables module.
             \end{highlights}
         \end{onecolentry}
 
@@ -250,9 +251,9 @@
         
         % Frontend Technologies category
         \begin{onecolentry}
-        \textbf{Frontend:} React, Next.js, Redux, Tailwind CSS, Sass, Material UI \\  % CHANGE: Add your frontend skills
+        \textbf{Frontend:} Next.js, React, Redux, DOM, HTML, CSS, Sass, Atomic Design, Material UI \\  % CHANGE: Add your frontend skills
         \vspace{0.1 cm}
-        \textbf{Backend:} Spring, Spring Boot, FastAPI, Spring JPA, JDBC  % CHANGE: Add your backend skills
+        \textbf{Backend:} Spring, Spring Boot, FastAPI, Spring JPA, JDBC, Restful APIs, Microservices  % CHANGE: Add your backend skills
         \end{onecolentry}
         
         \vspace{0.1 cm}
@@ -263,6 +264,13 @@
         \end{onecolentry}
         
         \vspace{0.1 cm}
+
+        % AI / ML category
+        \begin{onecolentry}
+            \textbf{AI / ML:} LLMs Integration, LangChain, Vector Database(ChromaDB), Gemini, Google AI Studio, Sentence-Transformers. \  % CHANGE: Add your database experience
+            \end{onecolentry}
+            
+            \vspace{0.1 cm}
         
         % Development Tools category
         \begin{onecolentry}
@@ -278,12 +286,11 @@
         % Format: Project Name [right-aligned: GitHub link]
         % CHANGE: Replace with your projects
         \noindent
-        \textbf{Customer Support Analyzer [\textit{RAG based Application}]} \hfill \href{https://github.com/tushar-fs/customer-support-analyzer}{\small \faGithub \space GitHub}
+        \textbf{Customer Support Analyzer [\textit{RAG based Application}]} \hfill \href{https://github.com/tushar-fs/customer-support-analyzer}{\small GitHub}
         
         \begin{highlights}
-            \item Architected a full-stack semantic search engine, featuring a \textbf{Python/FastAPI} backend to power a \textbf{Retrieval-Augmented Generation (RAG)} pipeline to enable natural language queries on a knowledge base of customer support tickets.
+            \item Architected a full-stack semantic search engine, featuring a \textbf{Python/FastAPI} backend to power a \textbf{Retrieval-Augmented Generation (RAG)} pipeline to enable natural language queries on a knowledge base of customer support tickets and achieving 80\% accuracy in generating context-aware responses.
             \item Combined Google's \textbf{gemini-1.5-flash-latest LLM} with a \textbf{ChromaDB} vector database and \textbf{`sentence-transformers`} to deliver context-aware resolution from a knowledge base.
-            \item Engineered a responsive frontend using \textbf{Next.js} and \textbf{React}, allowing users to submit queries and view AI-generated answers alongside original source support tickets for verification.
             \item \textbf{Technologies Used:} Python, FastAPI, Next.js, React, Vector Database(ChromaDB), Google Gemini API, Sentence-Transformers, Hugging face, Tailwind CSS.
         \end{highlights}
 
@@ -291,7 +298,7 @@
         \vspace{0.2 cm}
 
         \noindent
-        \textbf{BookTable [\textit{Restaurant Booking Application}]} \hfill \href{https://github.com/gopinathsjsu/team-project-20201-synergy}{\small \faGithub \space GitHub}
+        \textbf{BookTable [\textit{Restaurant Booking Application}]} \hfill \href{https://github.com/gopinathsjsu/team-project-20201-synergy}{\small GitHub}
         
         \begin{highlights}
             \item \textbf{Led key frontend development:} Established the UI project, \textbf{dockerized} frontend, built core user interfaces (Login, Homepage, Profile), and engineered dynamic restaurant search and discovery by integrating \textbf{Google Maps API}.
